@@ -1,4 +1,5 @@
-export default {
+const initialState = {
+  reorder_level: 20,
   products: [
   {
     id: 1,
@@ -37,3 +38,4 @@ export default {
   },
 ],
 };
+export default initialState;
