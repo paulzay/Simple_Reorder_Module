@@ -70,3 +70,24 @@ button {
 	outline: 1px solid grey;
 	width: 50%;
 }
+.pending h2,
+.processed h2 {
+	text-align: center;
+}
+.reorder.processedx {
+	border-left: 20px solid green;
+}
+.reorder.processedy {
+	border-left: 20px solid red;
+}
+.reorder {
+	background: #f4f4f4;
+	margin: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+.reorder h3 {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
