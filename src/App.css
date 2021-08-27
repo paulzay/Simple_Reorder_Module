@@ -67,7 +67,6 @@ button {
 }
 .pending,
 .processed {
-	outline: 1px solid grey;
 	width: 50%;
 }
 .pending h2,

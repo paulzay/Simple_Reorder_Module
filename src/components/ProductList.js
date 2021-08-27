@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import Product from './Product';
 
-function ProductList({products}) {
+function ProductList({products, sellProduct}) {
   return (
-      <table className="table">
+    <table className="table">
       <thead>
         <tr>
           
@@ -12,13 +13,13 @@ function ProductList({products}) {
           <th scope="col">Price</th>
           <th scope="col">Quantity</th>
           <th scope="col">Image</th>
-          <th scope="col">Sell</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         {
           products.map(product => (
-            <Product key={product.id} product={product} />
+            <Product key={product.id} product={product} sellProduct={sellProduct} />
           ))
         }
       </tbody>
@@ -30,4 +31,9 @@ const mapStateToProps = state => ({
   products: state.products,
 });
 
-export default connect(mapStateToProps, null)(ProductList);
+const mapDispatchToProps = dispatch => ({
+  sellProduct: id => {
+    dispatch({ id, type: 'SELL' });
+  },
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
